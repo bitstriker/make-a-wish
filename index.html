@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Serif" /> -->
+  <link rel="stylesheet" href="style.css">
+  
+  
+</head>
+<body>
+  <header>
+    <div class="container d-flex justify-content-between align-items-start mt-2">
+      <div class="logo">
+        <img src="the-g.png" alt="">
+      </div>
+      <nav class="d-flex align-items-center">
+        <a href="https://wa.me/5215522342376&text=Mensaje%para%mostrar"><i class="fab fa-whatsapp"></i><span>+52 1 55 22 34 23 76</span></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <button class="btn btn-sm" type="button">QUIERO DONAR</button></p>
+        <div class="button-a"></div>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 text-uppercase">Ayuda a Gabriel a cumplir deseos</h1>
+      <p class="lead">Con la ayuda de: <img src="mawmx.png"></p>
+      <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+      <div class="button-b"></div>
+    </div>
+  </section>
+  <section class="total bg-blue">
+    <div class="container pt-3 pb-3">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center text-center">
+            <div class="flex-fill total-donado">
+              <p><b>$<span class="money"></span></b></p>
+              <p><span>Total donado</span></p>
+            </div>
+            <div class="lead">+</div>
+            <div class="flex-fill total-donado">
+              <p><b>$<span class="money"></span></b></p>
+              <p><span>Donado por Gabriel</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="deseos">
+            <div class="d-flex">
+              <div class="flex-fill"><span>1 DESEO</span></div>
+              <div class="flex-fill"><span>2 DESEOS</span></div>
+              <div class="flex-fill"><span>3 DESEOS</span></div>
+            </div>
+            <div class="progress">
+              <div id="progress" class="progress-bar" role="progressbar" style="" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="faltan">Falta <b><span id="percentage">100</span>%</b> para llegar a la meta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main">
+    <div class="container">
+      <!-- icon | icon | icon -->
+      <div class="row text-center maw-icons">
+        <div class="col-sm-4">
+          <!-- <drupal-entity alt="Icono donación" data-caption="Icono donación" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="b66a2fa9-b18f-4871-99c0-ba0e6e4b7e54" title="Icono donación"></drupal-entity> -->
+          <img src="i_donar.png">
+          <p class="lead">Por cada peso que dones, Gabriel donará otro.</p>
+        </div>
+        <div class="col-sm-4">
+          <!-- <drupal-entity alt="Icono meta" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="f6704035-f28d-4204-8992-e67c4ba53026" title="Icono meta"></drupal-entity> -->
+          <img src="i_meta.png">
+          <p class="lead">Nuestra meta es cumplir los deseos de 3 niños.</p>
+        </div>
+        <div class="col-sm-4">
+          <!-- <drupal-entity alt="Icono estrella" data-caption="Icono estrella" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="8b467436-64ab-4c2c-ae85-795b917a54a8" title="Icono estrella"></drupal-entity> -->
+          <img src="i_deseo.png">
+          <p class="lead">Cada $ 15,000 cumples un deseo de un wish kid.</p>
+        </div>
+      </div>
+      <!-- video | content -->
+      <div class="row mb-5">
+        <div class="col-sm-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rAC_4BvX9Eo" width="560"></iframe>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <h2 class="text-uppercase">Ayuda a gabriel a cumplir deseos</h2>
+          <p class="glow">Cómo parte de mi <b>preparación para mi Bar Mitzvah</b>, me propuse encontrar un <b>“mitzvah project”</b> que ayudara directamente a gente a tener una mejor calidad de vida.</p>
+          <p class="glow">Encontré a Make-A-Wish, que cumpliendo deseos, transforma vidas; <b>“Cuando un deseo se hace realidad, trae fortaleza, esperanza y transformación”</b>.</p>
+          <p class="glow">Ayúdame a cumplir los deseos de niños con enfermedades críticas, para darles fortaleza y alegrías, en medio de su lucha por la vida.</p>
+          <p class="glow lead"><b>¿Ayúdame a cumplir mi deseo!</b></p>
+          <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+          <div class="button-c"></div>
+          <nav class="d-flex justify-content-end social align-items-center">
+            <span>Compartir</span>
+            <a><i class="fab fa-facebook-square"></i></a>
+            <a><i class="fab fa-twitter-square"></i></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bottom bg-blue">
+    <div class="container text-center">
+      <img src="mawmx.png">
+      <p class="lead">Cumplir un deseo puede cambiar la forma en que un niño enfrenta su enfermedad. Descubre más en <a href="http://www.makeawish.org.mx/">Make-A-Wish</a>.</p>
+    </div>
+  </footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="">México | 2019</div>
+        <div class="">design & developed by <a href="https://steed.mx/es">steed.mx</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="jquery.enllax.min.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AbOkdRRnp4SB7ZxtCCT1-Ayk_Q_yHQdcOB8S8Idu43nlqHNdRD2n49mbZ2IkoM_MHB418BQGyA8L0knv"></script>
+  <script>
+    function getTotal() {
+      var today = moment().format();
+      fetch('https://api.sandbox.paypal.com/v1/reporting/transactions/?start_date=2019-03-01T00:00:00-0700&end_date=' + today + '&fields=all&page_size=100&page=1',
+      {
+        method: 'get',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': 'Bearer A21AAHztOd5qFdycFs_0m6g2wJtUPbF26-rwlBvvb6vhtBGyT01B7KbTkhxHdRSxDdG5DJQ_aiyeL_CWH50X_RZb-BucttY1A'
+        }
+      })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(transaction) {
+          calculatePercentage(transaction.transaction_details);
+        });
+    }
+    
+    function calculatePercentage(transactions){
+      var goal = 45000;
+      var totalAmount = 0;
+      var money = document.getElementsByClassName('money');
+      for(i=0 ; i<transactions.length ; i++) {
+        totalAmount = totalAmount + parseFloat(transactions[i].transaction_info.transaction_amount.value)*100;
+      }
+      var progress = ((totalAmount*2)*100)/45000;
+      var percentage = 100-progress;
+      document.getElementById('progress').style.width = parseInt(progress).toString()+'%';
+      document.getElementById('percentage').innerHTML = percentage.toPrecision(2);
+      for (m = 0; m < money.length; m++) {
+        money[m].innerHTML = totalAmount.toString();
+      }
+      console.log(totalAmount);
+      console.log(progress);
+      console.log(percentage);
+    }
+
+    (function ($) {
+      getTotal();
+      [
+        {
+          container: ".button-a",
+          style: {
+            label:  "pay",
+            shape:  "pill",
+            fundingicons: false,
+            layout: "horizontal",
+            tagline: false,
+            width: 114,
+            height: 32
+          }
+        },
+        {
+          container: ".button-b",
+          style: {
+            label:  "pay",
+            shape:  "pill",
+            fundingicons: false,
+            layout: "horizontal",
+            tagline: false,
+            width: 172,
+            height: 46
+          }
+        },
+        {
+          container: ".button-c",
+          style: {
+            label:  "pay",
+            shape:  "pill",
+            fundingicons: false,
+            layout: "horizontal",
+            tagline: false,
+            width: 172,
+            height: 46
+          }
+        }
+      ].forEach(function(button) {
+        paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '10'
+              }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            return fetch('/paypal-transaction-complete', {
+              method: 'post',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                orderID: data.orderID
+              })
+            });
+
+            getTotal();
+          });
+        },
+        // commit: true,
+        style: button.style
+      }).render(button.container);
+      // }).render(element);
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>
