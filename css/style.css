@@ -1,3 +1,4 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Droid+Serif');
 @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 body {
@@ -170,7 +171,7 @@ b {
   position: relative;
 }
 .total:after {
-  background-image: url(stars_left.png), url(stars_right.png);
+  background-image: url(../images/stars_left.png), url(../images/stars_right.png);
   background-position: -10% 0 ,105% 0;
   background-repeat: no-repeat;
   background-size: 42%;
@@ -216,7 +217,7 @@ b {
   height: 10px;
 }
 .progress-bar {
-  background-color: #fdd835 !important;
+  background-color: #fdd835;
 }
 .deseos {
   margin-top: 30px;
@@ -252,7 +253,7 @@ b {
   margin-top: 4px;
 }
 .main {
-  background-image: url(stars-top.png), url(stars-bottom.jpg);
+  background-image: url(../images/stars-top.png), url(../images/stars-bottom.jpg);
   background-position: left 65% ,right 130%;
   background-size: 70%, 76%;
   background-repeat: no-repeat;

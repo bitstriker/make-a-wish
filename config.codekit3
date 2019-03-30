@@ -9,44 +9,120 @@
 	],
 "creatorBuild": "29156",
 "files": {
-	"/bg.jpg": {
+	"/css/style.css": {
+		"aP": 1,
+		"bl": 1,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/styles.css",
+		"oF": 2,
+		"oS": 3
+		},
+	"/images/bg.jpg": {
 		"ft": 16384,
 		"iS": 107391,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "/bg.jpg",
+		"oAP": "/images/bg.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"/i_deseo.png": {
+	"/images/i_deseo.png": {
 		"ft": 32768,
 		"iS": 14424,
 		"oA": 0,
-		"oAP": "/i_deseo.png",
+		"oAP": "/images/i_deseo.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"/i_donar.png": {
+	"/images/i_donar.png": {
 		"ft": 32768,
 		"iS": 16734,
 		"oA": 0,
-		"oAP": "/i_donar.png",
+		"oAP": "/images/i_donar.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"/i_meta.png": {
+	"/images/i_meta.png": {
 		"ft": 32768,
 		"iS": 10592,
 		"oA": 0,
-		"oAP": "/i_meta.png",
+		"oAP": "/images/i_meta.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/mawmx.png": {
+		"ft": 32768,
+		"iS": 20746,
+		"oA": 0,
+		"oAP": "/images/mawmx.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/stars-bottom.jpg": {
+		"ft": 16384,
+		"iS": 62769,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/stars-bottom.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/images/stars-top.png": {
+		"ft": 32768,
+		"iS": 67846,
+		"oA": 0,
+		"oAP": "/images/stars-top.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/stars_left.png": {
+		"ft": 32768,
+		"iS": 22447,
+		"oA": 0,
+		"oAP": "/images/stars_left.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/stars_right.png": {
+		"ft": 32768,
+		"iS": 14654,
+		"oA": 0,
+		"oAP": "/images/stars_right.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/the-g.png": {
+		"ft": 32768,
+		"iS": 7850,
+		"oA": 0,
+		"oAP": "/images/the-g.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -61,27 +137,27 @@
 		"oAP": "/index.html",
 		"oF": 0
 		},
-	"/jquery.enllax.min.js": {
+	"/js/jquery.enllax.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/jquery.enllax.min-min.js",
+		"oAP": "/js/jquery.enllax.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"/mawmx.png": {
-		"ft": 32768,
-		"iS": 20746,
+	"/js/script.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
 		"oA": 0,
-		"oAP": "/mawmx.png",
+		"oAP": "/js/script-min.js",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
+		"sC": 3,
+		"tS": 0
 		},
 	"/README.md": {
 		"cB": 0,
@@ -101,81 +177,6 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
-		},
-	"/stars-bottom.jpg": {
-		"ft": 16384,
-		"iS": 62769,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/stars-bottom.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"/stars-top.png": {
-		"ft": 32768,
-		"iS": 67846,
-		"oA": 0,
-		"oAP": "/stars-top.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/stars_left.png": {
-		"ft": 32768,
-		"iS": 22447,
-		"oA": 0,
-		"oAP": "/stars_left.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/stars_right.png": {
-		"ft": 32768,
-		"iS": 14654,
-		"oA": 0,
-		"oAP": "/stars_right.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "/style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/the-g.png": {
-		"ft": 32768,
-		"iS": 7850,
-		"oA": 0,
-		"oAP": "/the-g.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
 		}
 	},
 "hooks": [
