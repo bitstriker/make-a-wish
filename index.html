@@ -26,7 +26,12 @@
     <div class="container">
       <h1 class="display-4 text-uppercase">Hola, soy Gabriel y soy un wish granter</h1>
       <p class="lead">Con la ayuda de: <img src="images/mawmx.png"></p>
-      <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+      <form class="form-inline">
+        <div class="form-group mb-2">
+          <input class="form-control form-control-lg" type="text" id="quantity">
+        </div>
+        <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+      </form>
       <div class="button-b"></div>
     </div>
   </section>
@@ -95,7 +100,12 @@
           <p class="glow">Encontré a Make-A-Wish, que cumpliendo deseos, transforma vidas; <b>“Cuando un deseo se hace realidad, trae fortaleza, esperanza y transformación”</b>.</p>
           <p class="glow">Ayúdame a cumplir los deseos de niños con enfermedades críticas, para darles fortaleza y alegrías, en medio de su lucha por la vida.</p>
           <p class="glow lead"><b>¿Ayúdame a cumplir mi deseo!</b></p>
-          <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+          <form class="form-inline">
+            <div class="form-group mb-2">
+              <input class="form-control form-control-lg" type="text" id="quantity">
+            </div>
+            <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+          </form>
           <div class="button-c"></div>
           <nav class="d-flex justify-content-end social align-items-center">
             <span>Compartir</span>
@@ -122,7 +132,119 @@
   </footer>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=AbOkdRRnp4SB7ZxtCCT1-Ayk_Q_yHQdcOB8S8Idu43nlqHNdRD2n49mbZ2IkoM_MHB418BQGyA8L0knv"></script>
-  <script src="js/script.js"></script>
+  <script src="https://www.paypal.com/sdk/js?currency=MXN&client-id=ASJsNqgydhmklf0sXGXM9wzms8Xp4H3ZeRTja1JnBsy-iUjJYd8KJ2TuGEM4FOZpx_IZB-WQJDmfxFWH"></script>
+  <script>
+  function getTotal() {
+    var today = moment().format();
+    fetch("https://api.paypal.com/v1/reporting/transactions/?start_date=2019-03-21T00:00:00-0700&end_date=" + today + "&fields=all&page_size=100&page=1",
+    {
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        "authorization": "Bearer A21AAHeZh5brzZYTPBN0-0JqEPVmZZJyjySYt4xbIqy8LY3g7_5nchNWTC0ArmFNJLHqVN2xO4nZVAzucfHcAII3TIfPWBtuQ"
+      }
+    })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(transaction) {
+        calculatePercentage(transaction.transaction_details);
+      });
+  }
+
+  function calculatePercentage(transactions){
+    var goal = 60000;
+    var totalAmount = 0;
+    var money = document.getElementsByClassName('money');
+    for(var i=0 ; i<transactions.length ; i++) {
+      totalAmount = totalAmount + parseFloat(transactions[i].transaction_info.transaction_amount.value)*100;
+    }
+    var progress = ((totalAmount*2)*100)/goal;
+    var percentage = goal-(totalAmount*2);
+    document.getElementById('progress').style.width = parseInt(progress).toString()+'%';
+    document.getElementById('percentage').innerHTML = percentage.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
+    for (var m = 0; m < money.length; m++) {
+      money[m].innerHTML = totalAmount.toString();
+    }
+    if (progress <= 33) {
+      document.getElementById('progress').style.backgroundColor = '#b71c1c';
+    } else if (progress >= 34 && progress <= 66) {
+      document.getElementById('progress').style.backgroundColor = '#ff6f00';
+    }
+  }
+
+  (function ($) {
+    getTotal();
+    [
+      {
+        container: ".button-a",
+        style: {
+          label:  "pay",
+          shape:  "pill",
+          fundingicons: false,
+          layout: "horizontal",
+          tagline: false,
+          width: 114,
+          height: 32
+        }
+      },
+      {
+        container: ".button-b",
+        style: {
+          label:  "pay",
+          shape:  "pill",
+          fundingicons: false,
+          layout: "horizontal",
+          tagline: false,
+          width: 172,
+          height: 46
+        }
+      },
+      {
+        container: ".button-c",
+        style: {
+          label:  "pay",
+          shape:  "pill",
+          fundingicons: false,
+          layout: "horizontal",
+          tagline: false,
+          width: 172,
+          height: 46
+        }
+      }
+    ].forEach(function(button) {
+      paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              currency_code: "MXN",
+              value: document.getElementById('quantity').value,
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
+
+          getTotal();
+        });
+      },
+      // commit: true,
+      style: button.style
+    }).render(button.container);
+    // }).render(element);
+    });
+  })(jQuery);
+</script>
 </body>
 </html>

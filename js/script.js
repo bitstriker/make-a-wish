@@ -1,11 +1,11 @@
 function getTotal() {
   var today = moment().format();
-  fetch('https://api.sandbox.paypal.com/v1/reporting/transactions/?start_date=2019-03-01T00:00:00-0700&end_date=' + today + '&fields=all&page_size=100&page=1',
+  fetch("https://api.sandbox.paypal.com/v1/reporting/transactions/?start_date=2019-03-01T00:00:00-0700&end_date=" + today + "&fields=all&page_size=100&page=1",
   {
-    method: 'get',
+    method: "get",
     headers: {
-      'content-type': 'application/json',
-      'authorization': 'Bearer A21AAFgBvixuhIEy4w4RcibkmeEUFyTrSdduUb8akqvrdSW6jQz1oOvoWgmY57ObNXoeGb4MyTBklNec2evSopgirQKmUESeQ'
+      "content-type": "application/json",
+      "authorization": "Bearer A21AAEF9S_pqGnViKw0h7kNZE4K2K8r2fX_8SbCv0LrwkuIZSsMaVXZEzraiTkih9Qj74lKOIsQzIUPZY_LV36RRcsxZHB1tg"
     }
   })
     .then(function(response) {
@@ -17,17 +17,17 @@ function getTotal() {
 }
 
 function calculatePercentage(transactions){
-  var goal = 45000;
+  var goal = 60000;
   var totalAmount = 0;
   var money = document.getElementsByClassName('money');
-  for(i=0 ; i<transactions.length ; i++) {
+  for(var i=0 ; i<transactions.length ; i++) {
     totalAmount = totalAmount + parseFloat(transactions[i].transaction_info.transaction_amount.value)*100;
   }
-  var progress = ((totalAmount*2)*100)/60000;
-  var percentage = 60000-(totalAmount*2);
+  var progress = ((totalAmount*2)*100)/goal;
+  var percentage = goal-(totalAmount*2);
   document.getElementById('progress').style.width = parseInt(progress).toString()+'%';
   document.getElementById('percentage').innerHTML = percentage.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
-  for (m = 0; m < money.length; m++) {
+  for (var m = 0; m < money.length; m++) {
     money[m].innerHTML = totalAmount.toString();
   }
   if (progress <= 33) {
@@ -79,32 +79,32 @@ function calculatePercentage(transactions){
   ].forEach(function(button) {
     paypal.Buttons({
     createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '10'
-          }
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        return fetch('/paypal-transaction-complete', {
-          method: 'post',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: document.getElementById('quantity').value
+            }
+          }]
         });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          return fetch('/paypal-transaction-complete', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              orderID: data.orderID
+            })
+          });
 
-        getTotal();
-      });
-    },
-    // commit: true,
-    style: button.style
-  }).render(button.container);
+          getTotal();
+        });
+      },
+      // commit: true,
+      style: button.style
+    }).render(button.container);
   // }).render(element);
   });
 })(jQuery);

@@ -106,7 +106,7 @@ b {
 .hero {
   align-items: center;
   background-color: #121212;
-  background-image: url('http://prowebtulum.com/maw/bg.jpg');
+  background-image: url(../images/bg.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,7 +441,15 @@ iframe {
 .button-b,
 .button-c {
   width: 172px;
-  transform: translateY(-100%);
+  transform: translate(90px,-100%);
   height: 46px;
-  opacity: 0.001;
+  opacity: 0.05;
+}
+.form-control-lg {
+  line-height: 46px;
+  height: 46px;
+  border-radius: 42px;
+  width: 90px !important;
+  font-size: 18px;
+  text-align: center;
 }
