@@ -130,41 +130,67 @@
       </div>
     </div>
   </footer>
+  <div id="overlay">
+    <div id="overlay-close"></div>
+    <div class="overlay-content">
+      Muchas gracias por tu donación
+    </div>  
+  </div>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://www.paypal.com/sdk/js?currency=MXN&client-id=ASJsNqgydhmklf0sXGXM9wzms8Xp4H3ZeRTja1JnBsy-iUjJYd8KJ2TuGEM4FOZpx_IZB-WQJDmfxFWH"></script>
+  <script src="https://www.paypal.com/sdk/js?currency=MXN&client-id=AbOkdRRnp4SB7ZxtCCT1-Ayk_Q_yHQdcOB8S8Idu43nlqHNdRD2n49mbZ2IkoM_MHB418BQGyA8L0knv"></script>
   <script>
+  var totalAmount = 0;
+  
+  document.getElementById("overlay-close").addEventListener("click", closeModal);
+
   function getTotal() {
     var today = moment().format();
-    fetch("https://api.paypal.com/v1/reporting/transactions/?start_date=2019-03-21T00:00:00-0700&end_date=" + today + "&fields=all&page_size=100&page=1",
+    fetch("https://api.sandbox.paypal.com/v1/reporting/transactions/?start_date=2019-03-20T00:00:00-0700&end_date=2019-04-16T23:59:59-0700&fields=all&page_size=100&page=1",
     {
       method: "get",
       headers: {
         "content-type": "application/json",
-        "authorization": "Bearer A21AAHeZh5brzZYTPBN0-0JqEPVmZZJyjySYt4xbIqy8LY3g7_5nchNWTC0ArmFNJLHqVN2xO4nZVAzucfHcAII3TIfPWBtuQ"
+        "authorization": "Bearer A21AAEqEZLAjGdf1D83oelkeBOnHTfzhF1uk2sf14VeY3fCKS5VspqvOmEUBfWOw6UaMBhpmUfpHC70oXWbqqebCHyZ_SVVoA"
       }
     })
       .then(function(response) {
         return response.json();
       })
       .then(function(transaction) {
-        calculatePercentage(transaction.transaction_details);
+        // console.log("transaction", transaction);
+        sumTransactions(transaction.transaction_details);
       });
   }
 
-  function calculatePercentage(transactions){
-    var goal = 60000;
-    var totalAmount = 0;
-    var money = document.getElementsByClassName('money');
+  function sumDonation() {
+    var donation = parseInt(document.getElementById('quantity').value);
+    setNumbers(totalAmount + donation);
+    document.getElementById("overlay").className = "open";
+  }
+  
+  function closeModal() {
+    document.getElementById("overlay").classList.remove("open");
+  }
+
+  function sumTransactions(transactions){
     for(var i=0 ; i<transactions.length ; i++) {
-      totalAmount = totalAmount + parseFloat(transactions[i].transaction_info.transaction_amount.value)*100;
+      totalAmount = totalAmount + parseFloat(transactions[i].transaction_info.transaction_amount.value);
+      console.log(parseFloat(transactions[i].transaction_info.transaction_amount.value));
     }
+    setNumbers(totalAmount);
+  }
+
+  function setNumbers(totalAmount) {
+    console.log(typeof totalAmount);
+    var goal = 60000;
+    var money = document.getElementsByClassName('money');
     var progress = ((totalAmount*2)*100)/goal;
     var percentage = goal-(totalAmount*2);
     document.getElementById('progress').style.width = parseInt(progress).toString()+'%';
-    document.getElementById('percentage').innerHTML = percentage.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
+    document.getElementById('percentage').innerHTML = percentage.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     for (var m = 0; m < money.length; m++) {
-      money[m].innerHTML = totalAmount.toString();
+      money[m].innerHTML = totalAmount.toFixed(2).toString();
     }
     if (progress <= 33) {
       document.getElementById('progress').style.backgroundColor = '#b71c1c';
@@ -225,6 +251,7 @@
         });
       },
       onApprove: function(data, actions) {
+        sumDonation();
         return actions.order.capture().then(function(details) {
           return fetch('/paypal-transaction-complete', {
             method: 'post',
@@ -235,8 +262,7 @@
               orderID: data.orderID
             })
           });
-
-          getTotal();
+          
         });
       },
       // commit: true,
