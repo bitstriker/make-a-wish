@@ -117,8 +117,8 @@ b {
   height: 600px;
 }
 .hero h1{
-  font-size: 36px;
-  margin-right: 40%;
+  font-size: 31px;
+  margin-right: 10%;
 }
 .hero p img {
   display: block;
@@ -449,7 +449,7 @@ iframe {
   line-height: 46px;
   height: 46px;
   border-radius: 42px;
-  width: 90px !important;
+  width: 130px !important;
   font-size: 18px;
   text-align: center;
 }

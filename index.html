@@ -14,11 +14,11 @@
         <img src="images/the-g.png" alt="">
       </div>
       <nav class="d-flex align-items-center">
-        <a href="https://wa.me/5215522342376&text=Mensaje%para%mostrar"><i class="fab fa-whatsapp"></i><span>+52 1 55 22 34 23 76</span></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/5215522342376&text=Mensaje%para%mostrar"><i class="fab fa-whatsapp"></i><span>+52 1 55 30 34 49 52</span></a>
+        <!--<a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
-        <button class="btn btn-sm" type="button">QUIERO DONAR</button></p>
-        <div class="button-a"></div>
+        <button class="btn btn-sm" type="button">DONAR CANTIDAD</button></p>
+        <div class="button-a"></div>-->
       </nav>
     </div>
   </header>
@@ -28,9 +28,9 @@
       <p class="lead">Con la ayuda de: <img src="images/mawmx.png"></p>
       <form class="form-inline">
         <div class="form-group mb-2">
-          <input class="form-control form-control-lg" type="text" id="quantity">
+          <input class="form-control form-control-lg" placeholder="Cantidad" type="text" id="quantity">
         </div>
-        <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+        <button class="btn btn-lg btn-maw" type="button">DONAR CANTIDAD</button>
       </form>
       <div class="button-b"></div>
     </div>
@@ -61,7 +61,7 @@
             <div class="progress">
               <div id="progress" class="progress-bar" role="progressbar" style aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div class="faltan">Falta <b>$<span id="percentage">100</span></b> para llegar a <b>$60,000.00</b></div>
+            <div class="faltan">Falta <b>$<span id="percentage">100</span></b> MXN para llegar a <b>$60,000.00 MXN </b></div>
           </div>
         </div>
       </div>
@@ -79,12 +79,12 @@
         <div class="col-sm-4">
           <!-- <drupal-entity alt="Icono meta" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="f6704035-f28d-4204-8992-e67c4ba53026" title="Icono meta"></drupal-entity> -->
           <img src="images/i_meta.png">
-          <p class="lead">Nuestra meta es cumplir los deseos de 3 niños.</p>
+          <p class="lead">Nuestra meta es cumplir deseos.</p>
         </div>
         <div class="col-sm-4">
           <!-- <drupal-entity alt="Icono estrella" data-caption="Icono estrella" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="8b467436-64ab-4c2c-ae85-795b917a54a8" title="Icono estrella"></drupal-entity> -->
           <img src="images/i_deseo.png">
-          <p class="lead">Cada $ 15,000 cumples un deseo de un wish kid.</p>
+          <p class="lead">¡Llegemos a 60,000 pesos para cumplir deseos!</p>
         </div>
       </div>
       <!-- video | content -->
@@ -102,15 +102,15 @@
           <p class="glow lead"><b>¿Ayúdame a cumplir mi deseo!</b></p>
           <form class="form-inline">
             <div class="form-group mb-2">
-              <input class="form-control form-control-lg" type="text" id="quantity">
+              <input class="form-control form-control-lg" type="text" id="quantity"  placeholder="Cantidad">
             </div>
-            <button class="btn btn-lg btn-maw" type="button">QUIERO DONAR</button>
+            <button class="btn btn-lg btn-maw" type="button">DONAR CANTIDAD</button>
           </form>
           <div class="button-c"></div>
           <nav class="d-flex justify-content-end social align-items-center">
-            <span>Compartir</span>
+            <!--<span>Compartir</span>
             <a><i class="fab fa-facebook-square"></i></a>
-            <a><i class="fab fa-twitter-square"></i></a>
+            <a><i class="fab fa-twitter-square"></i></a>-->
           </nav>
         </div>
       </div>
@@ -133,7 +133,7 @@
   <div id="overlay">
     <div id="overlay-close"></div>
     <div class="overlay-content">
-      Muchas gracias por tu donación
+      Muchas gracias por tu donación. Pronto tu pago se verá reflejado y te llegará un mail de parte de Paypal.
     </div>  
   </div>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -151,7 +151,7 @@
       method: "get",
       headers: {
         "content-type": "application/json",
-        "authorization": "Bearer A21AAH96td4l3aIrVgSy8KNMWToC9dDs_v-Dd_IWKTu9bYasnGkg70FsxxUTYcuXpL__RQWsSk1VQIAst0IywFtvPt8rN9MCw"
+        "authorization": "Bearer A21AAE3UPtcoTDM207I9Ti_3-JM_FwOrRm2jclNAzO73m4WYd1PYCRV7Z9Y-UdGraH23ZmuGGRBZWulY31Gav22TqyoIVFhsQ"
       }
     })
       .then(function(response) {
