@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Make a Wish</title>
+  <title>Dona con Gabriel</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -28,9 +28,10 @@
       <p class="lead">Con la ayuda de: <img src="images/mawmx.png"></p>
       <form class="form-inline">
         <div class="form-group mb-2">
+            <div class="mar_qua">Introduce cantidad</div>
           <input class="form-control form-control-lg" placeholder="Cantidad" type="text" id="quantity">
         </div>
-        <button class="btn btn-lg btn-maw" type="button">DONAR CANTIDAD</button>
+        <button class="btn btn-lg btn-maw" type="button">DONAR</button>
       </form>
       <div class="button-b"></div>
     </div>
@@ -74,7 +75,7 @@
         <div class="col-sm-4">
           <!-- <drupal-entity alt="Icono donación" data-caption="Icono donación" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="b66a2fa9-b18f-4871-99c0-ba0e6e4b7e54" title="Icono donación"></drupal-entity> -->
           <img src="images/i_donar.png">
-          <p class="lead">Por cada peso que dones, yo donaré otro.</p>
+          <p class="lead">Por cada peso que dones, Gabriel donará otro.</p>
         </div>
         <div class="col-sm-4">
           <!-- <drupal-entity alt="Icono meta" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="f6704035-f28d-4204-8992-e67c4ba53026" title="Icono meta"></drupal-entity> -->
@@ -84,27 +85,31 @@
         <div class="col-sm-4">
           <!-- <drupal-entity alt="Icono estrella" data-caption="Icono estrella" data-embed-button="media" data-entity-embed-display="view_mode:media.large" data-entity-embed-display-settings="{&quot;link_url&quot;:&quot;&quot;,&quot;link_url_target&quot;:0}" data-entity-type="media" data-entity-uuid="8b467436-64ab-4c2c-ae85-795b917a54a8" title="Icono estrella"></drupal-entity> -->
           <img src="images/i_deseo.png">
-          <p class="lead">¡Llegemos a 60,000 pesos!</p>
+          <p class="lead">¡Llegemos a 60,000 pesos para cumplir deseos!</p>
         </div>
       </div>
       <!-- video | content -->
       <div class="row mb-5">
         <div class="col-sm-6">
-          <div class="embed-responsive embed-responsive-16by9">
+          <!--<div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rAC_4BvX9Eo" width="560"></iframe>
+          </div>-->
+          <div class="logo_temp">
+            <img src="images/the-g.png" alt="">
           </div>
         </div>
         <div class="col-sm-6">
           <h2 class="text-uppercase">Hola, soy Gabriel y soy un wish granter</h2>
-          <p class="glow">Cómo parte de mi <b>preparación para mi Bar Mitzvah</b>, me propuse encontrar un <b>“mitzvah project”</b> que ayudara directamente a gente a tener una mejor calidad de vida.</p>
+          <p class="glow">Como parte de mi <b>preparación para mi Bar Mitzvah</b>, me propuse encontrar un <b>“mitzvah project”</b> que ayudara directamente a gente a tener una mejor calidad de vida.</p>
           <p class="glow">Encontré a Make-A-Wish, que cumpliendo deseos, transforma vidas; <b>“Cuando un deseo se hace realidad, trae fortaleza, esperanza y transformación”</b>.</p>
           <p class="glow">Ayúdame a cumplir los deseos de niños con enfermedades críticas, para darles fortaleza y alegrías, en medio de su lucha por la vida.</p>
-          <p class="glow lead"><b>¡Ayúdame a cumplir mi deseo!</b></p>
+          <p class="glow lead"><b>¡Ayúdame a cumplir deseos!</b></p>
           <form class="form-inline">
             <div class="form-group mb-2">
+                <div class="mar_qua">Introduce cantidad</div>
               <input class="form-control form-control-lg" type="text" id="quantity"  placeholder="Cantidad">
             </div>
-            <button class="btn btn-lg btn-maw" type="button">DONAR CANTIDAD</button>
+            <button class="btn btn-lg btn-maw" type="button">DONAR</button>
           </form>
           <div class="button-c"></div>
           <nav class="d-flex justify-content-end social align-items-center">
@@ -133,7 +138,7 @@
   <div id="overlay">
     <div id="overlay-close"></div>
     <div class="overlay-content">
-      Muchas gracias por tu donación. Pronto tu pago se verá reflejado y te llegará un mail de parte de Paypal.
+      Tu pago se verá reflejado y te llegará un mail de parte de Paypal.
     </div>  
   </div>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -151,7 +156,7 @@
       method: "get",
       headers: {
         "content-type": "application/json",
-        "authorization": "Bearer A21AAE3UPtcoTDM207I9Ti_3-JM_FwOrRm2jclNAzO73m4WYd1PYCRV7Z9Y-UdGraH23ZmuGGRBZWulY31Gav22TqyoIVFhsQ"
+        "authorization": "Bearer A21AAGk5VZxlCW8klfeD-tvHwebbPec5bitx3Ttvs4fTzdwPYptq_txOnFHsYhOKTgqMUOH8JwCAddQYPi8_7Iq6fhobyC4cw"
       }
     })
       .then(function(response) {

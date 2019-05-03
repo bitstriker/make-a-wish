@@ -328,6 +328,7 @@ footer.footer {
   }
   .hero {
     background-position: 42%;
+        height: initial;
   }
   .container {
     padding-left: 7.5vw;
